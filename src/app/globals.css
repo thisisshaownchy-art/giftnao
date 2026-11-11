@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-burgundy: #720D2D;
+  --secondary-burgundy: #8E2947;
+  --soft-rose: #DDA6AE;
+  --light-blush: #FFF0F2;
+  --warm-cream: #FFF8F2;
+  --main-text: #422A30;
+  --border-color: #EADDE0;
+}
+
+body {
+  color: var(--main-text);
+  background-color: var(--warm-cream);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF8F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #DDA6AE;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8E2947;
+}

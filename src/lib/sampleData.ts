@@ -1,0 +1,240 @@
+import { Product, StoreSettings } from './types';
+
+export const BANGLADESH_DISTRICTS = [
+  'Dhaka', 'Chattogram', 'Sylhet', 'Rajshahi', 'Khulna', 'Barishal', 'Rangpur', 'Mymensingh',
+  'Gazipur', 'Narayanganj', 'Cumilla', 'Bogura', 'Brahmanbaria', 'Cox\'s Bazar', 'Dinajpur',
+  'Feni', 'Habiganj', 'Jamalpur', 'Jashore', 'Kushtia', 'Moulvibazar', 'Narsingdi', 'Noakhali',
+  'Pabna', 'Sirajganj', 'Tangail'
+];
+
+export const OCCASIONS_LIST = [
+  { slug: 'couple-gifts', name: 'Couple Gifts', description: 'Curated romance for you and your beloved', icon: 'Heart' },
+  { slug: 'birthday-gifts', name: 'Birthday Gifts', description: 'Surprise celebration boxes to brighten their year', icon: 'Gift' },
+  { slug: 'anniversary-gifts', name: 'Anniversary Gifts', description: 'Commemorate your love and milestones together', icon: 'Sparkles' },
+  { slug: 'valentines-day', name: 'Valentine\'s Day', description: 'Heartfelt romantic expressions and sweet treats', icon: 'Flame' },
+  { slug: 'new-year', name: 'New Year Gifts', description: 'Fresh beginnings and joyful celebratory gift packs', icon: 'Sun' },
+  { slug: 'bengali-new-year', name: 'Bengali New Year', description: 'Traditional Pohela Boishakh delights and hampers', icon: 'Flower' },
+  { slug: 'chocolates-sweets', name: 'Chocolates & Sweets', description: 'Artisanal confections, imported chocolates, and delicacies', icon: 'Cookie' },
+  { slug: 'personalized-gifts', name: 'Personalized Gifts', description: 'Engraved, custom photo keepsakes and romantic cards', icon: 'Palette' },
+];
+
+export const INITIAL_PRODUCTS: Product[] = [
+  {
+    id: 'prod-001',
+    slug: 'mini-chocolate-love-box',
+    name: 'Mini Chocolate Love Box',
+    shortDescription: 'Delicate mini assortment of premium chocolates with a romantic customized note.',
+    description: 'A sweet and tender surprise for everyday affection. Includes fine imported chocolates, silk rose petals, and a handwritten calligraphic love note nestled in our signature burgundy GiftNao presentation box.',
+    price: 950,
+    compareAtPrice: 1200,
+    images: [
+      'https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1549007953-2f2dc0b24019?auto=format&fit=crop&w=800&q=80'
+    ],
+    category: 'Chocolates & Sweets',
+    categorySlug: 'chocolates-sweets',
+    occasions: ['Couple Gifts', 'Valentine\'s Day', 'Chocolates & Sweets'],
+    stockQuantity: 24,
+    isAvailable: true,
+    isPersonalizable: true,
+    isFeatured: true,
+    isBestseller: true,
+    ingredients: 'Milk chocolate, roasted hazelnuts, cocoa butter, vanilla extract.',
+    allergens: 'Contains dairy, tree nuts, and soy lecithin.',
+    weight: '250g',
+    expiryInfo: 'Best before 6 months from packaging date.',
+    createdAt: '2026-10-01T10:00:00Z',
+    updatedAt: '2026-10-25T10:00:00Z'
+  },
+  {
+    id: 'prod-002',
+    slug: 'romantic-couple-box',
+    name: 'Romantic Couple Box',
+    shortDescription: 'Couples keepsake treasure with his-and-hers scented candles, chocolates, and custom memory booklet.',
+    description: 'Designed exclusively to spark connection and cherished moments. This romantic curation features artisan soy candles, Belgium truffles, matching couple bracelets, and a velvet-lined photo holder with your customized anniversary or love message.',
+    price: 2450,
+    compareAtPrice: 2800,
+    images: [
+      'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=80'
+    ],
+    category: 'Couple Gifts',
+    categorySlug: 'couple-gifts',
+    occasions: ['Couple Gifts', 'Anniversary Gifts', 'Valentine\'s Day'],
+    stockQuantity: 18,
+    isAvailable: true,
+    isPersonalizable: true,
+    isFeatured: true,
+    isBestseller: true,
+    weight: '650g',
+    createdAt: '2026-10-02T10:00:00Z',
+    updatedAt: '2026-10-25T10:00:00Z'
+  },
+  {
+    id: 'prod-003',
+    slug: 'chocolate-delight-box',
+    name: 'Chocolate Delight Box',
+    shortDescription: 'Rich assortment of Ferrero Rocher, gourmet pralines, and dark chocolate bars.',
+    description: 'A chocolate lover\'s ultimate fantasy! Handcrafted with luxury chocolates from around the world, garnished with golden ribbons and packaged in an opulent GiftNao magnetic burgundy keepsake chest.',
+    price: 1850,
+    compareAtPrice: 2100,
+    images: [
+      'https://images.unsplash.com/photo-1526081347589-7fa3cb41b4b2?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1582293041079-7814c2f12063?auto=format&fit=crop&w=800&q=80'
+    ],
+    category: 'Chocolates & Sweets',
+    categorySlug: 'chocolates-sweets',
+    occasions: ['Birthday Gifts', 'Chocolates & Sweets', 'New Year'],
+    stockQuantity: 30,
+    isAvailable: true,
+    isPersonalizable: true,
+    isFeatured: true,
+    isBestseller: false,
+    ingredients: 'Assorted dark and milk chocolates, hazelnut praline, cocoa nibs.',
+    allergens: 'May contain gluten, nuts, and dairy products.',
+    weight: '450g',
+    expiryInfo: 'Best before 9 months from packaging date.',
+    createdAt: '2026-10-03T10:00:00Z',
+    updatedAt: '2026-10-25T10:00:00Z'
+  },
+  {
+    id: 'prod-004',
+    slug: 'birthday-surprise-box',
+    name: 'Birthday Surprise Box',
+    shortDescription: 'Festive birthday hamper complete with celebration confetti, party treats, scented candle, and custom birthday card.',
+    description: 'Make their birthday unforgettable from miles away. Packed with vibrant celebratory elements, gourmet mini cookies, a birthday wishing bell, and a custom photo greetings card.',
+    price: 2150,
+    compareAtPrice: 2500,
+    images: [
+      'https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=800&q=80'
+    ],
+    category: 'Birthday Gifts',
+    categorySlug: 'birthday-gifts',
+    occasions: ['Birthday Gifts'],
+    stockQuantity: 15,
+    isAvailable: true,
+    isPersonalizable: true,
+    isFeatured: true,
+    isBestseller: true,
+    weight: '500g',
+    createdAt: '2026-10-04T10:00:00Z',
+    updatedAt: '2026-10-25T10:00:00Z'
+  },
+  {
+    id: 'prod-005',
+    slug: 'anniversary-memory-box',
+    name: 'Anniversary Memory Box',
+    shortDescription: 'Luxurious velvet box with wooden memory album, eternal golden rose, and romantic letter cylinder.',
+    description: 'Celebrate years of togetherness with timeless elegance. Comes with a personalized wooden photo album engraved with both your names and milestone date, alongside an everlasting gilded rose.',
+    price: 3200,
+    compareAtPrice: 3600,
+    images: [
+      'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=800&q=80'
+    ],
+    category: 'Anniversary Gifts',
+    categorySlug: 'anniversary-gifts',
+    occasions: ['Anniversary Gifts', 'Couple Gifts'],
+    stockQuantity: 12,
+    isAvailable: true,
+    isPersonalizable: true,
+    isFeatured: true,
+    isBestseller: false,
+    weight: '800g',
+    createdAt: '2026-10-05T10:00:00Z',
+    updatedAt: '2026-10-25T10:00:00Z'
+  },
+  {
+    id: 'prod-006',
+    slug: 'personalized-photo-gift-set',
+    name: 'Personalized Photo Gift Set',
+    shortDescription: 'Custom acrylic photo frame, warm ambient fairy lights, and personalized Spotify acrylic plaque with your song.',
+    description: 'Turn your favorite shared song and photo into an artistic illuminated display. Connects to your favorite romantic anthem with scannable Spotify code, paired with fairy light warmth.',
+    price: 1650,
+    compareAtPrice: 1950,
+    images: [
+      'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80'
+    ],
+    category: 'Personalized Gifts',
+    categorySlug: 'personalized-gifts',
+    occasions: ['Personalized Gifts', 'Couple Gifts', 'Anniversary Gifts', 'Valentine\'s Day'],
+    stockQuantity: 25,
+    isAvailable: true,
+    isPersonalizable: true,
+    isFeatured: true,
+    isBestseller: true,
+    weight: '400g',
+    createdAt: '2026-10-06T10:00:00Z',
+    updatedAt: '2026-10-25T10:00:00Z'
+  },
+  {
+    id: 'prod-007',
+    slug: 'premium-valentines-box',
+    name: 'Premium Valentine\'s Box',
+    shortDescription: 'Ultimate romantic grand hamper with imported chocolates, plush teddy, preserved rose, and love scroll.',
+    description: 'The epitome of Valentine romance. Features a handcrafted preserved rose in glass dome that lasts for years, premium Swiss chocolates, gentle plush heart mascot, and romantic message sealed with burgundy wax.',
+    price: 3800,
+    compareAtPrice: 4500,
+    images: [
+      'https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=800&q=80'
+    ],
+    category: 'Valentine\'s Day',
+    categorySlug: 'valentines-day',
+    occasions: ['Valentine\'s Day', 'Couple Gifts'],
+    stockQuantity: 8,
+    isAvailable: true,
+    isPersonalizable: true,
+    isFeatured: true,
+    isBestseller: true,
+    weight: '900g',
+    createdAt: '2026-10-07T10:00:00Z',
+    updatedAt: '2026-10-25T10:00:00Z'
+  },
+  {
+    id: 'prod-008',
+    slug: 'build-your-own-gift-box',
+    name: 'Build-Your-Own Gift Box',
+    shortDescription: 'Choose your preferred custom box style, gourmet treats, and personalized accessories.',
+    description: 'Tailor-made perfection! Select from our luxury matte burgundy boxes, pick hand-selected treats, candles, or accessories, and dictate every single line of your romantic personalized note.',
+    price: 1500,
+    compareAtPrice: 1750,
+    images: [
+      'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=800&q=80'
+    ],
+    category: 'Personalized Gifts',
+    categorySlug: 'personalized-gifts',
+    occasions: ['Personalized Gifts', 'Couple Gifts', 'New Year', 'Bengali New Year'],
+    stockQuantity: 50,
+    isAvailable: true,
+    isPersonalizable: true,
+    isFeatured: true,
+    isBestseller: false,
+    weight: '550g',
+    createdAt: '2026-10-08T10:00:00Z',
+    updatedAt: '2026-10-25T10:00:00Z'
+  }
+];
+
+export const DEFAULT_STORE_SETTINGS: StoreSettings = {
+  storeName: 'GiftNao',
+  phone: '01866371040',
+  whatsapp: '01866371040',
+  email: 'support@giftnao.com',
+  address: 'Dhaka, Bangladesh',
+  facebookUrl: 'https://facebook.com/giftnao',
+  instagramUrl: 'https://instagram.com/giftnao',
+  businessHours: '9:00 AM – 11:00 PM (Everyday)',
+  insideDhakaShipping: 70,
+  outsideDhakaShipping: 130,
+  announcementText: 'Nationwide delivery across Bangladesh • Cash on Delivery & bKash / Nagad / Rocket: 01866371040',
+  bkashNumber: '01866371040',
+  bkashType: 'Personal',
+  nagadNumber: '01866371040',
+  nagadType: 'Personal',
+  rocketNumber: '01866371040',
+  rocketType: 'Personal',
+};
